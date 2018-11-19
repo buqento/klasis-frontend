@@ -243,7 +243,7 @@
         <div class="row" id="portfolio-wrapper">
           <div class="col-lg-3 col-md-6 portfolio-item filter-app">
             <a href="">
-              <img src="img/gallery/app (1).jpg" alt="">
+              <img src="img/gallery/app1.jpg" alt="">
               <div class="details">
                 <h4>App 1</h4>
                 <span>Alored dono par</span>
@@ -253,7 +253,7 @@
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-web">
             <a href="">
-              <img src="img/gallery/app (2).jpg" alt="">
+              <img src="img/gallery/app2.jpg" alt="">
               <div class="details">
                 <h4>Web 2</h4>
                 <span>Alored dono par</span>
@@ -263,7 +263,7 @@
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-app">
             <a href="">
-              <img src="img/gallery/app (3).jpg" alt="">
+              <img src="img/gallery/app3.jpg" alt="">
               <div class="details">
                 <h4>App 3</h4>
                 <span>Alored dono par</span>
@@ -273,7 +273,7 @@
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-card">
             <a href="">
-              <img src="img/gallery/app (4).jpg" alt="">
+              <img src="img/gallery/app4.jpg" alt="">
               <div class="details">
                 <h4>Card 1</h4>
                 <span>Alored dono par</span>
@@ -283,7 +283,7 @@
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-card">
             <a href="">
-              <img src="img/gallery/app (5).jpg" alt="">
+              <img src="img/gallery/app5.jpg" alt="">
               <div class="details">
                 <h4>Card 2</h4>
                 <span>Alored dono par</span>
@@ -293,7 +293,7 @@
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-web">
             <a href="">
-              <img src="img/gallery/app (6).jpg" alt="">
+              <img src="img/gallery/app6.jpg" alt="">
               <div class="details">
                 <h4>Web 3</h4>
                 <span>Alored dono par</span>
@@ -303,7 +303,7 @@
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-card">
             <a href="">
-              <img src="img/gallery/app (7).jpg" alt="">
+              <img src="img/gallery/app7.jpg" alt="">
               <div class="details">
                 <h4>Card 3</h4>
                 <span>Alored dono par</span>
@@ -313,7 +313,7 @@
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-app">
             <a href="">
-              <img src="img/gallery/app (8).jpg" alt="">
+              <img src="img/gallery/app8.jpg" alt="">
               <div class="details">
                 <h4>App 2</h4>
                 <span>Alored dono par</span>
@@ -323,7 +323,7 @@
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-logo">
             <a href="">
-              <img src="img/gallery/app (9).jpg" alt="">
+              <img src="img/gallery/app9.jpg" alt="">
               <div class="details">
                 <h4>Logo 1</h4>
                 <span>Alored dono par</span>
@@ -333,7 +333,7 @@
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-logo">
             <a href="">
-              <img src="img/gallery/app (10).jpg" alt="">
+              <img src="img/gallery/app10.jpg" alt="">
               <div class="details">
                 <h4>Logo 3</h4>
                 <span>Alored dono par</span>
@@ -343,7 +343,7 @@
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-web">
             <a href="">
-              <img src="img/gallery/app (11).jpg" alt="">
+              <img src="img/gallery/app11.jpg" alt="">
               <div class="details">
                 <h4>Web 1</h4>
                 <span>Alored dono par</span>
@@ -353,7 +353,7 @@
 
           <div class="col-lg-3 col-md-6 portfolio-item filter-logo">
             <a href="">
-              <img src="img/gallery/app (12).jpg" alt="">
+              <img src="img/gallery/app12.jpg" alt="">
               <div class="details">
                 <h4>Logo 2</h4>
                 <span>Alored dono par</span>

@@ -133,18 +133,14 @@
         </div>
         <div class="row counters">
 
-          <div class="col-4">
-
+          <div class="col-md-6 col-sm-12">
+            <h3>Laki-laki</h3>
             <canvas id="myDoughnutChart" width="400" height="400"></canvas>
+            <br>
           </div>
 
-          <div class="col-4">
-
-            <canvas id="myPieChart" width="400" height="400"></canvas>
-          </div>
-
-          <div class="col-4">
-
+          <div class="col-md-6 col-sm-12">
+            <h3>Perempuan</h3>
             <canvas id="myBarChart" width="400" height="400"></canvas>
           </div>
         </div>
@@ -163,22 +159,22 @@
         </div>
         <div class="row counters">
 
-  				<div class="col-lg-3 col-6 text-center">
+          <div class="col-lg-3 col-sm-12 text-center">
             <span data-toggle="counter-up">21</span>
             <p>Jemaat</p>
   				</div>
 
-          <div class="col-lg-3 col-6 text-center">
+          <div class="col-lg-3 col-sm-12 text-center">
             <span data-toggle="counter-up">186</span>
             <p>Unit Pelayanan</p>
   				</div>
 
-          <div class="col-lg-3 col-6 text-center">
+          <div class="col-lg-3 col-sm-12 text-center">
             <span data-toggle="counter-up">300</span>
             <p>Pelayan</p>
   				</div>
 
-          <div class="col-lg-3 col-6 text-center">
+          <div class="col-lg-3 col-sm-12 text-center">
             <span data-toggle="counter-up">22,832</span>
             <p>Jiwa</p>
   				</div>
@@ -554,7 +550,7 @@
       data: {
           labels: ["Sudah Baptis", "Belum Baptis"],
           datasets: [{
-              label: '# of Votes',
+              label: "",
               data: [125, 198],
               backgroundColor: [
                   'rgba(54, 162, 235, 0.2)',
@@ -587,7 +583,7 @@
       data: {
           labels: ["Sudah Baptis", "Belum Baptis"],
           datasets: [{
-              label: '# of Votes',
+              label: false,
               data: [12, 19],
               backgroundColor: [
                   'rgba(54, 162, 235, 0.2)',
@@ -617,7 +613,7 @@
       data: {
           labels: ["Sudah Baptis", "Belum Baptis"],
           datasets: [{
-              label: '# of Votes',
+              label: '# s',
               data: [12, 19],
               backgroundColor: [
                   'rgba(54, 162, 235, 0.2)',

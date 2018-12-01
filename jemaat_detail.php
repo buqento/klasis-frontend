@@ -66,7 +66,7 @@
   <section id="hero">
     <div class="hero-container">
       <h1>Jemaat Sion</h1>
-      <h2>Kamu adalah Garam dan Terang Dunia</h2>
+      <!-- <h2>Kamu adalah Garam dan Terang Dunia</h2> -->
       <a href="#facts" class="btn-get-started">Data Jiwa</a>
     </div>
   </section><!-- #hero -->
@@ -86,17 +86,17 @@
         </div>
         <div class="row counters">
 
-  				<div class="col-lg-4 col-6 text-center">
+  				<div class="col-lg-4 col-sm-12 text-center">
             <span data-toggle="counter-up">21</span>
             <p>Kepala Keluarga</p>
   				</div>
 
-          <div class="col-lg-4 col-6 text-center">
+          <div class="col-lg-4 col-sm-12 text-center">
             <span data-toggle="counter-up">186</span>
             <p>Laki-Laki</p>
   				</div>
 
-          <div class="col-lg-4 col-6 text-center">
+          <div class="col-lg-4 col-sm-12 text-center">
             <span data-toggle="counter-up">300</span>
             <p>Perempuan</p>
   				</div>
@@ -115,16 +115,16 @@
           <h3 class="section-title">Sakramen Baptisan</h3>
           <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
-        <div class="row counters">
+        <div class="row">
 
-          <div class="col-6">
-            <p>Laki-laki</p>
-
+          <div class="col-md-6 col-sm-12">
+            <h3>Laki-laki</h3>
             <canvas id="myDoughnutChart" width="400" height="400"></canvas>
+            <br>
           </div>
 
-          <div class="col-6">
-            <p>Perempuan</p>
+          <div class="col-md-6 col-sm-12">
+            <h3>Perempuan</h3>
             <canvas id="myPieChart" width="400" height="400"></canvas>
           </div>
 
@@ -144,40 +144,76 @@
           <h3 class="section-title">Pendidikan</h3>
           <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
-        <div class="row counters">
+        <div class="row">
 
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">PAUD</th>
-                <th scope="col">SD</th>
-                <th scope="col">SMP</th>
-                <th scope="col">SMU/SMK</th>
-                <th scope="col">Strata 1</th>
-                <th scope="col">Strata 2</th>
-                <th scope="col">Strata 3</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>10</td>
-                <td>33</td>
-                <td>56</td>
-                <td>23</td>
-                <td>12</td>
-                <td>3</td>
-                <td>1</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="col-md-6 col-sm-12">
+
+            <table class="table">
+
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Jenis Pendidikan</th>
+                  <th scope="col">Jumlah</th>
+                </tr>
+
+                <tr>
+                  <th scope="row">1</th>
+                  <td>PAUD</td>
+                  <td>35</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">2</th>
+                  <td>SD</td>
+                  <td>30</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">3</th>
+                  <td>SMP</td>
+                  <td>25</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">4</th>
+                  <td>SMU/SMK</td>
+                  <td>20</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">5</th>
+                  <td>Strata 1</td>
+                  <td>15</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">6</th>
+                  <td>Strata 2</td>
+                  <td>10</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">7</th>
+                  <td>Strata 3</td>
+                  <td>5</td>
+                </tr>
+
+            </table>
+
+          </div>
+
+          <div class="col-md-6 col-sm-12">
+            <canvas id="chartPendidikan" height="300"></canvas>
+          </div>
+
 
         </div>
 
       </div>
     </section><!-- #facts -->
-
+    
     <!--==========================
-      Pekerjaan Section
+      Pendidikan Section
     ============================-->
     <section id="facts">
       <div class="container wow fadeIn">
@@ -185,37 +221,74 @@
           <h3 class="section-title">Pekerjaan</h3>
           <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
-        <div class="row counters">
+        <div class="row">
 
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">PNS</th>
-                <th scope="col">TNI/Polri</th>
-                <th scope="col">Dosen</th>
-                <th scope="col">Guru</th>
-                <th scope="col">Tenaga Medis</th>
-                <th scope="col">Wirausaha</th>
-                <th scope="col">Petani</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>10</td>
-                <td>33</td>
-                <td>56</td>
-                <td>23</td>
-                <td>12</td>
-                <td>3</td>
-                <td>1</td>
-              </tr>
-            </tbody>
-          </table>
+
+          <div class="col-md-6 col-sm-12">
+
+            <table class="table">
+
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Jenis Pekerjaan</th>
+                  <th scope="col">Jumlah</th>
+                </tr>
+
+                <tr>
+                  <th scope="row">1</th>
+                  <td>PNS</td>
+                  <td>35</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">2</th>
+                  <td>TNI/Polri</td>
+                  <td>30</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Dosen</td>
+                  <td>25</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">4</th>
+                  <td>Guru</td>
+                  <td>20</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">5</th>
+                  <td>Tenaga Medis</td>
+                  <td>15</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">6</th>
+                  <td>Wirausaha</td>
+                  <td>10</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">7</th>
+                  <td>Petani</td>
+                  <td>5</td>
+                </tr>
+
+            </table>
+
+          </div>
+
+          <div class="col-md-6 col-sm-12">
+            <canvas id="chartPekerjaan" height="300"></canvas>
+          </div>
 
         </div>
 
       </div>
     </section><!-- #facts -->
+    
 
 
     <!--==========================
@@ -227,37 +300,68 @@
           <h3 class="section-title">Bina Umat</h3>
           <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
-        <div class="row counters">
+        <div class="row">
+
+          <div class="col-md-6 col-sm-12">
+
+            <table class="table">
+
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Range (Tahun)</th>
+                  <th scope="col">Jumlah</th>
+                </tr>
+
+                <tr>
+                  <th scope="row">1</th>
+                  <td>0-3</td>
+                  <td>10</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">2</th>
+                  <td>4-6</td>
+                  <td>33</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">3</th>
+                  <td>7-9</td>
+                  <td>56</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">4</th>
+                  <td>10-12</td>
+                  <td>56</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">5</th>
+                  <td>13-15</td>
+                  <td>56</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">6</th>
+                  <td>16-45</td>
+                  <td>56</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">7</th>
+                  <td>46-59</td>
+                  <td>56</td>
+                </tr>
+
+            </table>
+
+          </div>
 
 
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">0-3</th>
-                <th scope="col">4-6</th>
-                <th scope="col">7-9</th>
-                <th scope="col">10-12</th>
-                <th scope="col">13-15</th>
-                <th scope="col">16-45</th>
-                <th scope="col">46-59</th>
-                <th scope="col">60-85</th>
-                <th scope="col"> >=86</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>10</td>
-                <td>33</td>
-                <td>56</td>
-                <td>23</td>
-                <td>12</td>
-                <td>3</td>
-                <td>1</td>
-                <td>3</td>
-                <td>1</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="col-md-6 col-sm-12">
+            <canvas id="chartBinaUmat" height="300"></canvas>
+          </div>
 
         </div>
 
@@ -271,36 +375,70 @@
     <section id="facts">
       <div class="container wow fadeIn">
         <div class="section-header">
-          <h3 class="section-title">Jemaat Difable</h3>
+          <h3 class="section-title">Disabilitas</h3>
           <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
         <div class="row counters">
 
+          <div class="col-md-6 col-sm-12">
 
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Tuna Netra</th>
-                <th scope="col">Tuna Rungu</th>
-                <th scope="col">Tuna Wicara</th>
-                <th scope="col">Tuna Daksa</th>
-                <th scope="col">Tuna Grahita</th>
-                <th scope="col">Tuna Laras</th>
-                <th scope="col">Tuna Ganda</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>1</td>
-                <td>3</td>
-                <td>1</td>
-              </tr>
-            </tbody>
-          </table>
+            <table class="table">
+
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Jenis</th>
+                  <th scope="col">Jumlah</th>
+                </tr>
+
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Tuna Netra</td>
+                  <td>1</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Tuna Rungu</td>
+                  <td>3</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Tuna Wicara</td>
+                  <td>5</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">4</th>
+                  <td>Tuna Daksa</td>
+                  <td>6</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">5</th>
+                  <td>Tuna Grahita</td>
+                  <td>0</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">6</th>
+                  <td>Tuna Laras</td>
+                  <td>1</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">7</th>
+                  <td>Tuna Ganda</td>
+                  <td>0</td>
+                </tr>
+
+            </table>
+
+          </div>
+
+          <div class="col-md-6 col-sm-12">
+            <canvas id="chartDisabilitas" height="300"></canvas>
+          </div>
 
         </div>
 
@@ -504,6 +642,163 @@
               borderColor: [
                   'rgba(54, 162, 235, 0.2)',
                   'rgba(255, 99, 132, 0.2)',
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+  });
+
+
+  var ctx = document.getElementById("chartPendidikan");
+  var chartPendidikan = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+          labels: ["PAUD", "SD", "SMP", "SMU/SMK", "S1", "S2", "S3"],
+          datasets: [{
+              label: false,
+              data: [35, 30, 25, 20, 15, 10, 5],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+  });
+  
+
+  var ctx = document.getElementById("chartPekerjaan");
+  var chartPekerjaan = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+          labels: ["PAUD", "SD", "SMP", "SMU/SMK", "S1", "S2", "S3"],
+          datasets: [{
+              label: false,
+              data: [35, 30, 25, 20, 15, 10, 5],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+  });
+
+
+
+var ctx = document.getElementById("chartBinaUmat");
+var chartBinaUmat = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["0-3", "4-6", "7-9", "10-12", "13-15", "16-45", "46-59"],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3, 23],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+
+
+  var ctx = document.getElementById("chartDisabilitas");
+  var chartDisabilitas = new Chart(ctx, {
+      type: 'pie',
+      data: {
+          labels: ["Tuna Netra", "Tuna Rungu", "Tuna Wicara", "Tuna Daksa", "Tuna Grahita", "Tuna Laras", "Tuna Ganda"],
+          datasets: [{
+              label: false,
+              data: [35, 30, 25, 20, 15, 10, 5],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
               ],
               borderWidth: 1
           }]

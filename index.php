@@ -51,7 +51,7 @@
           <li class="menu-active"><a href="#hero">Home</a></li>
           <li><a href="#about">Tentang Kami</a></li>
           <li><a href="#">Produk</a></li>
-          <li><a href="#">Jemaat</a></li>
+          <li><a href="jemaat_detail.php">Jemaat</a></li>
           <li><a href="#portfolio">Gallery</a></li>
           <li><a href="#">Event</a></li>
           <li><a href="#">Artikel</a></li>
@@ -67,7 +67,7 @@
     <div class="hero-container">
       <h1>Klasis Ambon</h1>
       <h2>Kamu adalah Garam dan Terang Dunia</h2>
-      <a href="#about" class="btn-get-started">Mulai</a>
+      <a href="#about" class="btn-get-started">Visi & Misi</a>
     </div>
   </section><!-- #hero -->
 
@@ -119,6 +119,38 @@
 
       </div>
     </section><!-- #about -->
+
+
+
+    <!--==========================
+      Sakramen Section
+    ============================-->
+    <section id="facts">
+      <div class="container wow fadeIn">
+        <div class="section-header">
+          <h3 class="section-title">Sakramen</h3>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+        <div class="row counters">
+
+          <div class="col-4">
+
+            <canvas id="myDoughnutChart" width="400" height="400"></canvas>
+          </div>
+
+          <div class="col-4">
+
+            <canvas id="myPieChart" width="400" height="400"></canvas>
+          </div>
+
+          <div class="col-4">
+
+            <canvas id="myBarChart" width="400" height="400"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #facts -->
 
     <!--==========================
       pelayanan Section
@@ -513,6 +545,102 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+
+  <script src="js/Chart.js"></script>
+  <script>
+  var ctx = document.getElementById("myBarChart");
+  var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: ["Sudah Baptis", "Belum Baptis"],
+          datasets: [{
+              label: '# of Votes',
+              data: [125, 198],
+              backgroundColor: [
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 99, 132, 0.2)',
+              ],
+              borderColor: [
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 99, 132, 0.2)',
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+  });
+
+
+
+
+  var ctx = document.getElementById("myDoughnutChart");
+  var myDoughnutChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+          labels: ["Sudah Baptis", "Belum Baptis"],
+          datasets: [{
+              label: '# of Votes',
+              data: [12, 19],
+              backgroundColor: [
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 99, 132, 0.2)',
+              ],
+              borderColor: [
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 99, 132, 0.2)',
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+  });
+
+  var ctx = document.getElementById("myPieChart");
+  var myPieChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+          labels: ["Sudah Baptis", "Belum Baptis"],
+          datasets: [{
+              label: '# of Votes',
+              data: [12, 19],
+              backgroundColor: [
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 99, 132, 0.2)',
+              ],
+              borderColor: [
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 99, 132, 0.2)',
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+  });
+  </script>
 
 </body>
 </html>

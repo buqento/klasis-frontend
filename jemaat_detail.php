@@ -54,12 +54,6 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-    Theme Name: Regna
-    Theme URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
 </head>
 
 <body>
@@ -112,7 +106,7 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
       <div class="container wow fadeIn">
         <div class="section-header">
           <h3 class="section-title">Jumlah Jiwa</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <p class="section-description">Jumlah keseluruhan jiwa jemaat Sion.</p>
         </div>
         <div class="row counters">
 
@@ -143,7 +137,7 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
       <div class="container wow fadeIn">
         <div class="section-header">
           <h3 class="section-title">Sakramen Baptisan</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <p class="section-description">Data jumlah baptisan dikelompokkan berdasarkan jenis kelamin.</p>
         </div>
         <div class="row">
  
@@ -172,7 +166,7 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
       <div class="container wow fadeIn">
         <div class="section-header">
           <h3 class="section-title">Pendidikan</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <p class="section-description">Data jumlah jiwa dikelompokkan berdasarkan pendidikan terakhir.</p>
         </div>
         <div class="row">
 
@@ -186,47 +180,23 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
                   <th scope="col">Jumlah</th>
                 </tr>
 
+                <?php
+                $num = 1;
+                $sql = "select count(biodata.id) as jumlah, pendidikan.name from biodata inner join pendidikan on biodata.pendidikan_id = pendidikan.id group by biodata.pendidikan_id";
+                $result = $con->query($sql);
+                while ($row = $result->fetch_assoc()) {
+                    $jumlah = $row['jumlah'];
+                    $name = $row['name'];
+
+
+                ?>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>PAUD</td>
-                  <td><?= $jmlPaud ?></td>
+                  <th scope="row"><?= $num++ ?></th>
+                  <td><?= $name ?></td>
+                  <td><?= $jumlah ?></td>
                 </tr>
 
-                <tr>
-                  <th scope="row">2</th>
-                  <td>SD</td>
-                  <td><?= $jmlSd ?></td>
-                </tr>
-
-                <tr>
-                  <th scope="row">3</th>
-                  <td>SMP</td>
-                  <td><?= $jmlSmp ?></td>
-                </tr>
-
-                <tr>
-                  <th scope="row">4</th>
-                  <td>SMU/SMK</td>
-                  <td><?= $jmlSma ?></td>
-                </tr>
-
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Strata 1</td>
-                  <td><?= $jmlS1 ?></td>
-                </tr>
-
-                <tr>
-                  <th scope="row">6</th>
-                  <td>Strata 2</td>
-                  <td><?= $jmlS2 ?></td>
-                </tr>
-
-                <tr>
-                  <th scope="row">7</th>
-                  <td>Strata 3</td>
-                  <td><?= $jmlS3 ?></td>
-                </tr>
+                <?php } ?>
 
             </table>
 
@@ -249,12 +219,11 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
       <div class="container wow fadeIn">
         <div class="section-header">
           <h3 class="section-title">Pekerjaan</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <p class="section-description">Data jumlah jiwa dikelompokkan berdasarkan pekerjaan utama.</p>
         </div>
         <div class="row">
 
-<!-- 
-          <div class="col-md-3 col-sm-12">
+          <div class="col-md-4 col-sm-12">
 
             <table class="table">
 
@@ -264,53 +233,29 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
                   <th scope="col">Jumlah</th>
                 </tr>
 
+                <?php
+
+
+
+                $num = 1;
+                $sql = "select count(biodata.id) as jumlah, pekerjaan.name from biodata inner join pekerjaan on biodata.pekerjaan_id = pekerjaan.id group by biodata.pekerjaan_id";
+                $result = $con->query($sql);
+                while ($row = $result->fetch_assoc()) {
+                    $jumlah = $row['jumlah'];
+                    $name = $row['name'];
+                ?>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>PNS</td>
-                  <td>35</td>
+                  <th scope="row"><?= $num++ ?></th>
+                  <td><?= $name ?></td>
+                  <td><?= $jumlah ?></td>
                 </tr>
 
-                <tr>
-                  <th scope="row">2</th>
-                  <td>TNI/Polri</td>
-                  <td>30</td>
-                </tr>
-
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Dosen</td>
-                  <td>25</td>
-                </tr>
-
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Guru</td>
-                  <td>20</td>
-                </tr>
-
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Tenaga Medis</td>
-                  <td>15</td>
-                </tr>
-
-                <tr>
-                  <th scope="row">6</th>
-                  <td>Wirausaha</td>
-                  <td>10</td>
-                </tr>
-
-                <tr>
-                  <th scope="row">7</th>
-                  <td>Petani</td>
-                  <td>5</td>
-                </tr>
+                <?php } ?>
 
             </table>
+          </div>
 
-          </div> -->
-
-          <div class="col-md-12 col-sm-12">
+          <div class="col-md-8 col-sm-12">
             <canvas id="chartPekerjaan" height="300"></canvas>
           </div>
 
@@ -328,7 +273,7 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
       <div class="container wow fadeIn">
         <div class="section-header">
           <h3 class="section-title">Bina Umat</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <p class="section-description">Data jumlah jiwa dikelompokkan berdasarkan range umur.</p>
         </div>
         <div class="row">
 
@@ -418,7 +363,7 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
       <div class="container wow fadeIn">
         <div class="section-header">
           <h3 class="section-title">Disabilitas</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <p class="section-description">Data jumlah jiwa penyandang disabilitas (cacat tubuh).</p>
         </div>
         <div class="row counters">
 
@@ -432,53 +377,23 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
                   <th scope="col">Jumlah</th>
                 </tr>
 
+                <?php
+                $num = 1;
+                $sql = "select count(biodata.id) as jumlah, cacat.name from biodata inner join cacat on biodata.cacat_id = cacat.id group by biodata.cacat_id";
+                $result = $con->query($sql);
+                while ($row = $result->fetch_assoc()) {
+                    $jumlah = $row['jumlah'];
+                    $name = $row['name'];
+
+
+                ?>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Tuna Netra</td>
-                  <td>1</td>
+                  <th scope="row"><?= $num++ ?></th>
+                  <td><?= $name ?></td>
+                  <td><?= $jumlah ?></td>
                 </tr>
 
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Tuna Rungu</td>
-                  <td><?= $jmlTunaRungu ?></td>
-                </tr>
-
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Tuna Wicara</td>
-                  <td><?= $jmlTunaWicara ?></td>
-                </tr>
-
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Tuna Daksa</td>
-                  <td><?= $jmlTunaDaksa ?></td>
-                </tr>
-
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Tuna Grahita</td>
-                  <td><?= $jmlTunaGrahita ?></td>
-                </tr>
-
-                <tr>
-                  <th scope="row">6</th>
-                  <td>Tuna Laras</td>
-                  <td><?= $jmlTunaLaras ?></td>
-                </tr>
-
-                <tr>
-                  <th scope="row">7</th>
-                  <td>Tuna Ganda</td>
-                  <td><?= $jmlTunaGanda ?></td>
-                </tr>
-
-                <tr>
-                  <th scope="row">8</th>
-                  <td>Tuna Netra</td>
-                  <td><?= $jmlTunaNetra ?></td>
-                </tr>
+                <?php } ?>
 
             </table>
 
@@ -623,6 +538,13 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
     </div>
   </footer><!-- #footer -->
 
+  <?php
+
+                $dL = "1,2,3,4,5,6";
+                $rL = explode(",",$dL);
+                print_r($rL);
+  ?>
+
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- JavaScript Libraries -->
@@ -656,14 +578,8 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
           datasets: [{
               label: '# of Votes',
               data: [jmlLakiBaptis, jmlLakiBelumBaptis],
-              backgroundColor: [
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 99, 132, 0.2)',
-              ],
-              borderColor: [
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 99, 132, 0.2)',
-              ],
+              backgroundColor: ['#003f5c','#bc5090','#ffa600'],
+              borderColor: ['#003f5c','#bc5090','#ffa600'],
               borderWidth: 1
           }]
       },
@@ -683,20 +599,14 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
 
   var ctx = document.getElementById("myPieChart");
   var myPieChart = new Chart(ctx, {
-      type: 'pie',
+      type: 'doughnut',
       data: {
           labels: ["Sudah Baptis", "Belum Baptis"],
           datasets: [{
               label: '# of Votes',
               data: [jmlPerempuanBaptis, jmlPerempuanBelumBaptis],
-              backgroundColor: [
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 99, 132, 0.2)',
-              ],
-              borderColor: [
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 99, 132, 0.2)',
-              ],
+              backgroundColor: ['#003f5c','#bc5090','#ffa600'],
+              borderColor: ['#003f5c','#bc5090','#ffa600'],
               borderWidth: 1
           }]
       },
@@ -723,26 +633,12 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
   var chartPendidikan = new Chart(ctx, {
       type: 'doughnut',
       data: {
-          labels: ["PAUD", "SD", "SMP", "SMU/SMK", "S1", "S2", "S3"],
+          labels: ["PAUD", "SD", "SMP", "SMU", "S1", "S2", "S3"],
           datasets: [{
               label: false,
               data: [jmlPaud, jmlSd, jmlSmp, jmlSma, jmlS1, jmlS2, jmlS3],
-              backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-              ],
-              borderColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-              ],
+              backgroundColor: ['#004c6d','#32607e','#517590','#6e8ba1','#8aa1b4','#a7b8c6','#c4cfd9','#e1e7ec','#ffffff'],
+              borderColor: ['#004c6d','#32607e','#517590','#6e8ba1','#8aa1b4','#a7b8c6','#c4cfd9','#e1e7ec','#ffffff'],
               borderWidth: 1
           }]
       },
@@ -787,20 +683,51 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
               label: "Data Pekerjaan",
               data: [jmlPekerjaanLainnya, jmlPekerjaanPns, jmlPekerjaanHonor, jmlPekerjaanGuru, jmlPekerjaanTniPolri, jmlPekerjaanWiraswasta, jmlPekerjaanBumn, jmlPekerjaanDosen, jmlPekerjaanPengacara, jmlPekerjaanDokter, jmlPekerjaanPerawat, jmlPekerjaanPendeta, jmlPekerjaanNotaris, jmlPekerjaanArsitek, jmlPekerjaanOjek, jmlPekerjaanSopir, jmlPekerjaanBecak, jmlPekerjaanPensiunan, jmlPekerjaanNelayan],
               backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+'#488f31',
+'#6a9832',
+'#88a037',
+'#a5a73f',
+'#c0af4a',
+'#dbb659',
+'#f4bd6a',
+'#f2a95e',
+'#ef9556',
+'#eb8050',
+'#e56b4e',
+'#dd554f',
+'#d43d51',
+
+'#003f5c',
+'#2f4b7c',
+'#665191',
+'#a05195',
+'#d45087',
+'#f95d6a',
+'#ff7c43',
+'#ffa600'
               ],
               borderColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+'#488f31',
+'#6aa040',
+'#89b050',
+'#a7c162',
+'#c5d275',
+'#e2e489',
+'#fff59f',
+'#fcd983',
+'#f8bc6c',
+'#f49e5c',
+'#ec8052',
+'#e2604f',
+'#d43d51',
+'#003f5c',
+'#2f4b7c',
+'#665191',
+'#a05195',
+'#d45087',
+'#f95d6a',
+'#ff7c43',
+'#ffa600'
               ],
               borderWidth: 1
           }]
@@ -835,20 +762,26 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
               label: '# Jiwa',
               data: [jmlByRange03, jmlByRange46, jmlByRange79, jmlByRange1012, jmlByRange1315, jmlByRange1645, jmlByRange4659, jmlByRange6085, jmlByRange86120],
               backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
+'#10006d',
+'#3c167e',
+'#5c2d8e',
+'#7945a0',
+'#955db2',
+'#b076c4',
+'#cb91d7',
+'#e5aceb',
+'#ffc8ff'
               ],
               borderColor: [
-                  'rgba(255,99,132,1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
+'#10006d',
+'#3b207f',
+'#593d91',
+'#765ba3',
+'#917ab5',
+'#ad9ac8',
+'#c8bada',
+'#e3dcec',
+'#ffffff'
               ],
               borderWidth: 1
           }]
@@ -882,20 +815,22 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
               label: false,
               data: [jmlTunaRungu, jmlTunaWicara, jmlTunaDaksa, jmlTunaGrahita, jmlTunaLaras, jmlTunaGanda, jmlTunaNetra],
               backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+'#003f5c',
+'#374c80',
+'#7a5195',
+'#bc5090',
+'#ef5675',
+'#ff764a',
+'#ffa600'
               ],
               borderColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+'#003f5c',
+'#374c80',
+'#7a5195',
+'#bc5090',
+'#ef5675',
+'#ff764a',
+'#ffa600'
               ],
               borderWidth: 1
           }]

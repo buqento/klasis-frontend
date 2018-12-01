@@ -1,7 +1,7 @@
 <?php
 
-// $con = mysqli_connect("localhost","root","Manggureb3!","klasisambon");
-$con = mysqli_connect("localhost","timoerin_bvqento","Manggureb3!","timoerin_klasis");
+$con = mysqli_connect("localhost","root","Manggureb3!","klasisambon");
+// $con = mysqli_connect("localhost","timoerin_bvqento","Manggureb3!","timoerin_klasis");
 if (mysqli_connect_errno()){echo "Failed to connect to MySQL: " . mysqli_connect_error();}
 
 function getJmlJemaat($con){

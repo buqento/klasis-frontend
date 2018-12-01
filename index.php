@@ -1,3 +1,7 @@
+<?php
+include("fun.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,34 +124,6 @@
       </div>
     </section><!-- #about -->
 
-
-
-    <!--==========================
-      Sakramen Section
-    ============================-->
-    <section id="facts">
-      <div class="container wow fadeIn">
-        <div class="section-header">
-          <h3 class="section-title">Sakramen</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-        </div>
-        <div class="row counters">
-
-          <div class="col-md-6 col-sm-12">
-            <h3>Laki-laki</h3>
-            <canvas id="myDoughnutChart" width="400" height="400"></canvas>
-            <br>
-          </div>
-
-          <div class="col-md-6 col-sm-12">
-            <h3>Perempuan</h3>
-            <canvas id="myBarChart" width="400" height="400"></canvas>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- #facts -->
-
     <!--==========================
       pelayanan Section
     ============================-->
@@ -160,22 +136,22 @@
         <div class="row counters">
 
           <div class="col-lg-3 col-sm-12 text-center">
-            <span data-toggle="counter-up">21</span>
+            <span data-toggle="counter-up"><?= getJmlJemaat($con) ?></span>
             <p>Jemaat</p>
   				</div>
 
           <div class="col-lg-3 col-sm-12 text-center">
-            <span data-toggle="counter-up">186</span>
+            <span data-toggle="counter-up"><?= getJmlUnit($con) ?></span>
             <p>Unit Pelayanan</p>
   				</div>
 
           <div class="col-lg-3 col-sm-12 text-center">
-            <span data-toggle="counter-up">300</span>
+            <span data-toggle="counter-up"><?= getJmlPelayan($con) ?></span>
             <p>Pelayan</p>
   				</div>
 
           <div class="col-lg-3 col-sm-12 text-center">
-            <span data-toggle="counter-up">22,832</span>
+            <span data-toggle="counter-up"><?= getJmlJiwa($con) ?></span>
             <p>Jiwa</p>
   				</div>
 
@@ -194,21 +170,21 @@
           <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
         <div class="row">
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
             <div class="box">
               <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
               <h4 class="title"><a href="">Rencana Strategi</a></h4>
               <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+          <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
             <div class="box">
               <div class="icon"><a href=""><i class="fa fa-balance-scale"></i></a></div>
               <h4 class="title"><a href="">Persidangan</a></h4>
               <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+          <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
             <div class="box">
               <div class="icon"><a href=""><i class="fa fa-file"></i></a></div>
               <h4 class="title"><a href="">Surat Keputusan</a></h4>
@@ -216,7 +192,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
             <div class="box">
               <div class="icon"><a href=""><i class="fa fa-book"></i></a></div>
               <h4 class="title"><a href="">Himpunan Materi</a></h4>

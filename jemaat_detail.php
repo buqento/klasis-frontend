@@ -1,3 +1,33 @@
+<?php
+include("fun.php");
+
+$jmlPaud = getJmlJiwaByPendidikan(16, 1, $con);
+$jmlSd = getJmlJiwaByPendidikan(16, 2, $con);
+$jmlSmp = getJmlJiwaByPendidikan(16, 3, $con);
+$jmlSma = getJmlJiwaByPendidikan(16, 4, $con);
+$jmlS1 = getJmlJiwaByPendidikan(16, 5, $con);
+$jmlS2 = getJmlJiwaByPendidikan(16, 6, $con);
+$jmlS3 = getJmlJiwaByPendidikan(16, 7, $con);
+
+$jmlByRange03 = getJmlJiwaByUmur(0, 3, 1, 16, $con); 
+$jmlByRange46 = getJmlJiwaByUmur(4, 6, 1, 16, $con); 
+$jmlByRange79 = getJmlJiwaByUmur(7, 9, 1, 16, $con); 
+$jmlByRange1012 = getJmlJiwaByUmur(10, 12, 1, 16, $con); 
+$jmlByRange1315 = getJmlJiwaByUmur(13, 15, 1, 16, $con); 
+$jmlByRange1645 = getJmlJiwaByUmur(16, 45, 1, 16, $con);
+$jmlByRange4659 = getJmlJiwaByUmur(46, 59, 1, 16, $con); 
+$jmlByRange6085 = getJmlJiwaByUmur(60, 85, 1, 16, $con); 
+$jmlByRange86120 = getJmlJiwaByUmur(86, 120, 1, 16, $con); 
+
+$jmlTunaRungu = getJmlJiwaByDisabilitas(16, 2, $con);
+$jmlTunaWicara = getJmlJiwaByDisabilitas(16, 3, $con);
+$jmlTunaDaksa = getJmlJiwaByDisabilitas(16, 4, $con); 
+$jmlTunaGrahita = getJmlJiwaByDisabilitas(16, 5, $con); 
+$jmlTunaLaras = getJmlJiwaByDisabilitas(16, 6, $con);
+$jmlTunaGanda = getJmlJiwaByDisabilitas(16, 7, $con);
+$jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,17 +117,17 @@
         <div class="row counters">
 
   				<div class="col-lg-4 col-sm-12 text-center">
-            <span data-toggle="counter-up">21</span>
+            <span data-toggle="counter-up"><?= getJmlJiwaByStatusPernikahan(16, 1, $con) ?></span>
             <p>Kepala Keluarga</p>
   				</div>
 
           <div class="col-lg-4 col-sm-12 text-center">
-            <span data-toggle="counter-up">186</span>
+            <span data-toggle="counter-up"><?= getJmlJiwaByJemaat(16, 1, $con) ?></span>
             <p>Laki-Laki</p>
   				</div>
 
           <div class="col-lg-4 col-sm-12 text-center">
-            <span data-toggle="counter-up">300</span>
+            <span data-toggle="counter-up"><?= getJmlJiwaByJemaat(16, 2, $con) ?></span>
             <p>Perempuan</p>
   				</div>
 
@@ -116,10 +146,10 @@
           <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
         <div class="row">
-
+ 
           <div class="col-md-6 col-sm-12">
             <h3>Laki-laki</h3>
-            <canvas id="myDoughnutChart" width="400" height="400"></canvas>
+            <canvas id="chartBaptisLaki" width="400" height="400"></canvas>
             <br>
           </div>
 
@@ -159,43 +189,43 @@
                 <tr>
                   <th scope="row">1</th>
                   <td>PAUD</td>
-                  <td>35</td>
+                  <td><?= $jmlPaud ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">2</th>
                   <td>SD</td>
-                  <td>30</td>
+                  <td><?= $jmlSd ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">3</th>
                   <td>SMP</td>
-                  <td>25</td>
+                  <td><?= $jmlSmp ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">4</th>
                   <td>SMU/SMK</td>
-                  <td>20</td>
+                  <td><?= $jmlSma ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">5</th>
                   <td>Strata 1</td>
-                  <td>15</td>
+                  <td><?= $jmlS1 ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">6</th>
                   <td>Strata 2</td>
-                  <td>10</td>
+                  <td><?= $jmlS2 ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">7</th>
                   <td>Strata 3</td>
-                  <td>5</td>
+                  <td><?= $jmlS3 ?></td>
                 </tr>
 
             </table>
@@ -223,8 +253,8 @@
         </div>
         <div class="row">
 
-
-          <div class="col-md-6 col-sm-12">
+<!-- 
+          <div class="col-md-3 col-sm-12">
 
             <table class="table">
 
@@ -278,9 +308,9 @@
 
             </table>
 
-          </div>
+          </div> -->
 
-          <div class="col-md-6 col-sm-12">
+          <div class="col-md-12 col-sm-12">
             <canvas id="chartPekerjaan" height="300"></canvas>
           </div>
 
@@ -315,43 +345,55 @@
                 <tr>
                   <th scope="row">1</th>
                   <td>0-3</td>
-                  <td>10</td>
+                  <td><?= $jmlByRange03 ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">2</th>
                   <td>4-6</td>
-                  <td>33</td>
+                  <td><?= $jmlByRange46 ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">3</th>
                   <td>7-9</td>
-                  <td>56</td>
+                  <td><?= $jmlByRange79 ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">4</th>
                   <td>10-12</td>
-                  <td>56</td>
+                  <td><?= $jmlByRange1012 ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">5</th>
                   <td>13-15</td>
-                  <td>56</td>
+                  <td><?= $jmlByRange1315 ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">6</th>
                   <td>16-45</td>
-                  <td>56</td>
+                  <td><?= $jmlByRange1645 ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">7</th>
                   <td>46-59</td>
-                  <td>56</td>
+                  <td><?= $jmlByRange4659 ?></td>
+                </tr>
+
+                <tr>
+                  <th scope="row">8</th>
+                  <td>60-85</td>
+                  <td><?= $jmlByRange6085 ?></td>
+                </tr>
+
+                <tr>
+                  <th scope="row">9</th>
+                  <td>>=86</td>
+                  <td><?= $jmlByRange86120 ?></td>
                 </tr>
 
             </table>
@@ -399,37 +441,43 @@
                 <tr>
                   <th scope="row">2</th>
                   <td>Tuna Rungu</td>
-                  <td>3</td>
+                  <td><?= $jmlTunaRungu ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">3</th>
                   <td>Tuna Wicara</td>
-                  <td>5</td>
+                  <td><?= $jmlTunaWicara ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">4</th>
                   <td>Tuna Daksa</td>
-                  <td>6</td>
+                  <td><?= $jmlTunaDaksa ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">5</th>
                   <td>Tuna Grahita</td>
-                  <td>0</td>
+                  <td><?= $jmlTunaGrahita ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">6</th>
                   <td>Tuna Laras</td>
-                  <td>1</td>
+                  <td><?= $jmlTunaLaras ?></td>
                 </tr>
 
                 <tr>
                   <th scope="row">7</th>
                   <td>Tuna Ganda</td>
-                  <td>0</td>
+                  <td><?= $jmlTunaGanda ?></td>
+                </tr>
+
+                <tr>
+                  <th scope="row">8</th>
+                  <td>Tuna Netra</td>
+                  <td><?= $jmlTunaNetra ?></td>
                 </tr>
 
             </table>
@@ -597,14 +645,17 @@
   <script src="js/Chart.js"></script>
   <script>
 
-  var ctx = document.getElementById("myDoughnutChart");
-  var myDoughnutChart = new Chart(ctx, {
+  var jmlLakiBaptis = <?= getJmlJiwaByBaptisJenkel(16, 1, 1, $con); ?>;
+  var jmlLakiBelumBaptis = <?= getJmlJiwaByBaptisJenkel(16, 0, 1, $con); ?>;
+
+  var ctx = document.getElementById("chartBaptisLaki");
+  var chartBaptisLaki = new Chart(ctx, {
       type: 'doughnut',
       data: {
           labels: ["Sudah Baptis", "Belum Baptis"],
           datasets: [{
               label: '# of Votes',
-              data: [12, 19],
+              data: [jmlLakiBaptis, jmlLakiBelumBaptis],
               backgroundColor: [
                   'rgba(54, 162, 235, 0.2)',
                   'rgba(255, 99, 132, 0.2)',
@@ -626,6 +677,9 @@
           }
       }
   });
+
+  var jmlPerempuanBaptis = <?= getJmlJiwaByBaptisJenkel(16, 1, 2, $con); ?>;
+  var jmlPerempuanBelumBaptis = <?= getJmlJiwaByBaptisJenkel(16, 0, 2, $con); ?>;
 
   var ctx = document.getElementById("myPieChart");
   var myPieChart = new Chart(ctx, {
@@ -634,7 +688,7 @@
           labels: ["Sudah Baptis", "Belum Baptis"],
           datasets: [{
               label: '# of Votes',
-              data: [12, 19],
+              data: [jmlPerempuanBaptis, jmlPerempuanBelumBaptis],
               backgroundColor: [
                   'rgba(54, 162, 235, 0.2)',
                   'rgba(255, 99, 132, 0.2)',
@@ -658,6 +712,13 @@
   });
 
 
+  var jmlPaud = <?= $jmlPaud ?>;
+  var jmlSd = <?= $jmlSd ?>;
+  var jmlSmp = <?= $jmlSmp ?>;
+  var jmlSma = <?= $jmlSma ?>;
+  var jmlS1 = <?= $jmlS1 ?>;
+  var jmlS2 = <?= $jmlS2 ?>;
+  var jmlS3 = <?= $jmlS3 ?>;
   var ctx = document.getElementById("chartPendidikan");
   var chartPendidikan = new Chart(ctx, {
       type: 'doughnut',
@@ -665,7 +726,7 @@
           labels: ["PAUD", "SD", "SMP", "SMU/SMK", "S1", "S2", "S3"],
           datasets: [{
               label: false,
-              data: [35, 30, 25, 20, 15, 10, 5],
+              data: [jmlPaud, jmlSd, jmlSmp, jmlSma, jmlS1, jmlS2, jmlS3],
               backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -697,14 +758,34 @@
   });
   
 
+  var jmlPekerjaanLainnya = <?= getJmlJiwaByPekerjaan(16, 1, $con); ?>;
+  var jmlPekerjaanPns = <?= getJmlJiwaByPekerjaan(16, 2, $con); ?>;
+  var jmlPekerjaanHonor = <?= getJmlJiwaByPekerjaan(16, 3, $con); ?>;
+  var jmlPekerjaanGuru = <?= getJmlJiwaByPekerjaan(16, 4, $con); ?>;
+  var jmlPekerjaanTniPolri = <?= getJmlJiwaByPekerjaan(16, 5, $con); ?>;
+  var jmlPekerjaanWiraswasta = <?= getJmlJiwaByPekerjaan(16, 6, $con); ?>;
+  var jmlPekerjaanBumn = <?= getJmlJiwaByPekerjaan(16, 7, $con); ?>;
+  var jmlPekerjaanDosen = <?= getJmlJiwaByPekerjaan(16, 8, $con); ?>;
+  var jmlPekerjaanPengacara = <?= getJmlJiwaByPekerjaan(16, 9, $con); ?>;
+  var jmlPekerjaanDokter = <?= getJmlJiwaByPekerjaan(16, 10, $con); ?>;
+  var jmlPekerjaanPerawat = <?= getJmlJiwaByPekerjaan(16, 11, $con); ?>;
+  var jmlPekerjaanPendeta = <?= getJmlJiwaByPekerjaan(16, 12, $con); ?>;
+  var jmlPekerjaanNotaris = <?= getJmlJiwaByPekerjaan(16, 13, $con); ?>;
+  var jmlPekerjaanArsitek = <?= getJmlJiwaByPekerjaan(16, 14, $con); ?>;
+  var jmlPekerjaanOjek = <?= getJmlJiwaByPekerjaan(16, 15, $con); ?>;
+  var jmlPekerjaanSopir = <?= getJmlJiwaByPekerjaan(16, 16, $con); ?>;
+  var jmlPekerjaanBecak = <?= getJmlJiwaByPekerjaan(16, 17, $con); ?>;
+  var jmlPekerjaanPensiunan = <?= getJmlJiwaByPekerjaan(16, 18, $con); ?>;
+  var jmlPekerjaanNelayan = <?= getJmlJiwaByPekerjaan(16, 19, $con); ?>;
+
   var ctx = document.getElementById("chartPekerjaan");
   var chartPekerjaan = new Chart(ctx, {
-      type: 'doughnut',
+      type: 'bar',
       data: {
-          labels: ["PAUD", "SD", "SMP", "SMU/SMK", "S1", "S2", "S3"],
+          labels: ["Lain", "PNS", "Honorer", "Guru", "TNI/Polri", "Wiraswasta", "BUMN", "Dosen", "Pengacara", "Dokter", "Perawat", "Pendeta", "Notaris", "Arsitek", "Ojek", "Sopir", "Becak", "Pensiunan", "Nelayan"],
           datasets: [{
-              label: false,
-              data: [35, 30, 25, 20, 15, 10, 5],
+              label: "Data Pekerjaan",
+              data: [jmlPekerjaanLainnya, jmlPekerjaanPns, jmlPekerjaanHonor, jmlPekerjaanGuru, jmlPekerjaanTniPolri, jmlPekerjaanWiraswasta, jmlPekerjaanBumn, jmlPekerjaanDosen, jmlPekerjaanPengacara, jmlPekerjaanDokter, jmlPekerjaanPerawat, jmlPekerjaanPendeta, jmlPekerjaanNotaris, jmlPekerjaanArsitek, jmlPekerjaanOjek, jmlPekerjaanSopir, jmlPekerjaanBecak, jmlPekerjaanPensiunan, jmlPekerjaanNelayan],
               backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -735,55 +816,71 @@
       }
   });
 
+  var jmlByRange03 = <?= $jmlByRange03 ?>;
+  var jmlByRange46 = <?= $jmlByRange46 ?>;
+  var jmlByRange79 = <?= $jmlByRange79 ?>;
+  var jmlByRange1012 = <?= $jmlByRange1012 ?>;
+  var jmlByRange1315 = <?= $jmlByRange1315 ?>;
+  var jmlByRange1645 = <?= $jmlByRange1645 ?>;
+  var jmlByRange4659 = <?= $jmlByRange4659 ?>;
+  var jmlByRange6085 = <?= $jmlByRange6085 ?>;
+  var jmlByRange86120 = <?= $jmlByRange86120 ?>;
+
+  var ctx = document.getElementById("chartBinaUmat");
+  var chartBinaUmat = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: ["0-3", "4-6", "7-9", "10-12", "13-15", "16-45", "46-59", "60-85", ">= 86"],
+          datasets: [{
+              label: '# Jiwa',
+              data: [jmlByRange03, jmlByRange46, jmlByRange79, jmlByRange1012, jmlByRange1315, jmlByRange1645, jmlByRange4659, jmlByRange6085, jmlByRange86120],
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                  'rgba(255,99,132,1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+  });
 
 
-var ctx = document.getElementById("chartBinaUmat");
-var chartBinaUmat = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ["0-3", "4-6", "7-9", "10-12", "13-15", "16-45", "46-59"],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3, 23],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
-    }
-});
-
+  var jmlTunaRungu = <?= $jmlTunaRungu ?>;
+  var jmlTunaWicara = <?= $jmlTunaWicara ?>;
+  var jmlTunaDaksa = <?= $jmlTunaDaksa ?>;
+  var jmlTunaGrahita = <?= $jmlTunaGrahita ?>;
+  var jmlTunaLaras = <?= $jmlTunaLaras ?>;
+  var jmlTunaGanda = <?= $jmlTunaGanda ?>;
+  var jmlTunaNetra = <?= $jmlTunaNetra ?>;
 
   var ctx = document.getElementById("chartDisabilitas");
   var chartDisabilitas = new Chart(ctx, {
-      type: 'pie',
+      type: 'doughnut',
       data: {
-          labels: ["Tuna Netra", "Tuna Rungu", "Tuna Wicara", "Tuna Daksa", "Tuna Grahita", "Tuna Laras", "Tuna Ganda"],
+          labels: ["Tuna Rungu", "Tuna Wicara", "Tuna Daksa", "Tuna Grahita", "Tuna Laras", "Tuna Ganda", "Tuna Netra"],
           datasets: [{
               label: false,
-              data: [35, 30, 25, 20, 15, 10, 5],
+              data: [jmlTunaRungu, jmlTunaWicara, jmlTunaDaksa, jmlTunaGrahita, jmlTunaLaras, jmlTunaGanda, jmlTunaNetra],
               backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

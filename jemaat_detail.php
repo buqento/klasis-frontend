@@ -379,7 +379,7 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
 
                 <?php
                 $num = 1;
-                $sql = "select count(biodata.id) as jumlah, cacat.name from biodata inner join cacat on biodata.cacat_id = cacat.id group by biodata.cacat_id";
+                $sql = "select count(biodata.id) as jumlah, cacat.name from biodata inner join cacat on biodata.cacat_id = cacat.id where biodata.cacat_id <> 1 group by biodata.cacat_id";
                 $result = $con->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     $jumlah = $row['jumlah'];
@@ -538,13 +538,6 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
     </div>
   </footer><!-- #footer -->
 
-  <?php
-
-                $dL = "1,2,3,4,5,6";
-                $rL = explode(",",$dL);
-                print_r($rL);
-  ?>
-
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- JavaScript Libraries -->
@@ -583,15 +576,15 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
               borderWidth: 1
           }]
       },
-      options: {
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero:true
-                  }
-              }]
-          }
-      }
+      // options: {
+      //     scales: {
+      //         yAxes: [{
+      //             ticks: {
+      //                 beginAtZero:true
+      //             }
+      //         }]
+      //     }
+      // }
   });
 
   var jmlPerempuanBaptis = <?= getJmlJiwaByBaptisJenkel(16, 1, 2, $con); ?>;
@@ -610,15 +603,15 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
               borderWidth: 1
           }]
       },
-      options: {
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero:true
-                  }
-              }]
-          }
-      }
+      // options: {
+      //     scales: {
+      //         yAxes: [{
+      //             ticks: {
+      //                 beginAtZero:true
+      //             }
+      //         }]
+      //     }
+      // }
   });
 
 
@@ -642,15 +635,15 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
               borderWidth: 1
           }]
       },
-      options: {
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero:true
-                  }
-              }]
-          }
-      }
+      // options: {
+      //     scales: {
+      //         yAxes: [{
+      //             ticks: {
+      //                 beginAtZero:true
+      //             }
+      //         }]
+      //     }
+      // }
   });
   
 
@@ -680,7 +673,7 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
       data: {
           labels: ["Lain", "PNS", "Honorer", "Guru", "TNI/Polri", "Wiraswasta", "BUMN", "Dosen", "Pengacara", "Dokter", "Perawat", "Pendeta", "Notaris", "Arsitek", "Ojek", "Sopir", "Becak", "Pensiunan", "Nelayan"],
           datasets: [{
-              label: "Data Pekerjaan",
+              label: "# Jumlah",
               data: [jmlPekerjaanLainnya, jmlPekerjaanPns, jmlPekerjaanHonor, jmlPekerjaanGuru, jmlPekerjaanTniPolri, jmlPekerjaanWiraswasta, jmlPekerjaanBumn, jmlPekerjaanDosen, jmlPekerjaanPengacara, jmlPekerjaanDokter, jmlPekerjaanPerawat, jmlPekerjaanPendeta, jmlPekerjaanNotaris, jmlPekerjaanArsitek, jmlPekerjaanOjek, jmlPekerjaanSopir, jmlPekerjaanBecak, jmlPekerjaanPensiunan, jmlPekerjaanNelayan],
               backgroundColor: [
 '#488f31',
@@ -759,7 +752,7 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
       data: {
           labels: ["0-3", "4-6", "7-9", "10-12", "13-15", "16-45", "46-59", "60-85", ">= 86"],
           datasets: [{
-              label: '# Jiwa',
+              label: '# Jumlah',
               data: [jmlByRange03, jmlByRange46, jmlByRange79, jmlByRange1012, jmlByRange1315, jmlByRange1645, jmlByRange4659, jmlByRange6085, jmlByRange86120],
               backgroundColor: [
 '#10006d',
@@ -808,29 +801,17 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
 
   var ctx = document.getElementById("chartDisabilitas");
   var chartDisabilitas = new Chart(ctx, {
-      type: 'doughnut',
+      type: 'bar',
       data: {
           labels: ["Tuna Rungu", "Tuna Wicara", "Tuna Daksa", "Tuna Grahita", "Tuna Laras", "Tuna Ganda", "Tuna Netra"],
           datasets: [{
-              label: false,
+              label: '# Jumlah',
               data: [jmlTunaRungu, jmlTunaWicara, jmlTunaDaksa, jmlTunaGrahita, jmlTunaLaras, jmlTunaGanda, jmlTunaNetra],
               backgroundColor: [
-'#003f5c',
-'#374c80',
-'#7a5195',
-'#bc5090',
-'#ef5675',
-'#ff764a',
-'#ffa600'
+                '#003f5c','#374c80','#7a5195','#bc5090','#ef5675','#ff764a','#ffa600'
               ],
               borderColor: [
-'#003f5c',
-'#374c80',
-'#7a5195',
-'#bc5090',
-'#ef5675',
-'#ff764a',
-'#ffa600'
+                '#003f5c','#374c80','#7a5195','#bc5090','#ef5675','#ff764a','#ffa600'
               ],
               borderWidth: 1
           }]
@@ -845,6 +826,7 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
           }
       }
   });
+
   </script>
 
 </body>

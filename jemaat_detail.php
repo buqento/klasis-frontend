@@ -19,6 +19,18 @@ $jmlByRange4659 = getJmlJiwaByUmur(46, 59, 1, 16, $con);
 $jmlByRange6085 = getJmlJiwaByUmur(60, 85, 1, 16, $con); 
 $jmlByRange86120 = getJmlJiwaByUmur(86, 120, 1, 16, $con); 
 
+
+$jmlByRangeP03 = getJmlJiwaByUmur(0, 3, 2, 16, $con); 
+$jmlByRangeP46 = getJmlJiwaByUmur(4, 6, 2, 16, $con); 
+$jmlByRangeP79 = getJmlJiwaByUmur(7, 9, 2, 16, $con); 
+$jmlByRangeP1012 = getJmlJiwaByUmur(10, 12, 2, 16, $con); 
+$jmlByRangeP1315 = getJmlJiwaByUmur(13, 15, 2, 16, $con); 
+$jmlByRangeP1645 = getJmlJiwaByUmur(16, 45, 2, 16, $con);
+$jmlByRangeP4659 = getJmlJiwaByUmur(46, 59, 2, 16, $con); 
+$jmlByRangeP6085 = getJmlJiwaByUmur(60, 85, 2, 16, $con); 
+$jmlByRangeP86120 = getJmlJiwaByUmur(86, 120, 2, 16, $con); 
+
+
 $jmlTunaRungu = getJmlJiwaByDisabilitas(16, 2, $con);
 $jmlTunaWicara = getJmlJiwaByDisabilitas(16, 3, $con);
 $jmlTunaDaksa = getJmlJiwaByDisabilitas(16, 4, $con); 
@@ -603,15 +615,6 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
               borderWidth: 1
           }]
       },
-      // options: {
-      //     scales: {
-      //         yAxes: [{
-      //             ticks: {
-      //                 beginAtZero:true
-      //             }
-      //         }]
-      //     }
-      // }
   });
 
 
@@ -635,15 +638,6 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
               borderWidth: 1
           }]
       },
-      // options: {
-      //     scales: {
-      //         yAxes: [{
-      //             ticks: {
-      //                 beginAtZero:true
-      //             }
-      //         }]
-      //     }
-      // }
   });
   
 
@@ -746,38 +740,53 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
   var jmlByRange6085 = <?= $jmlByRange6085 ?>;
   var jmlByRange86120 = <?= $jmlByRange86120 ?>;
 
+  var jmlByRangeP03 = <?= $jmlByRangeP03 ?>;
+  var jmlByRangeP46 = <?= $jmlByRangeP46 ?>;
+  var jmlByRangeP79 = <?= $jmlByRangeP79 ?>;
+  var jmlByRangeP1012 = <?= $jmlByRangeP1012 ?>;
+  var jmlByRangeP1315 = <?= $jmlByRangeP1315 ?>;
+  var jmlByRangeP1645 = <?= $jmlByRangeP1645 ?>;
+  var jmlByRangeP4659 = <?= $jmlByRangeP4659 ?>;
+  var jmlByRangeP6085 = <?= $jmlByRangeP6085 ?>;
+  var jmlByRangeP86120 = <?= $jmlByRangeP86120 ?>;
+
   var ctx = document.getElementById("chartBinaUmat");
   var chartBinaUmat = new Chart(ctx, {
       type: 'bar',
       data: {
           labels: ["0-3", "4-6", "7-9", "10-12", "13-15", "16-45", "46-59", "60-85", ">= 86"],
-          datasets: [{
-              label: '# Jumlah',
+          datasets: [
+          {
+              label: '# Laki-laki',
               data: [jmlByRange03, jmlByRange46, jmlByRange79, jmlByRange1012, jmlByRange1315, jmlByRange1645, jmlByRange4659, jmlByRange6085, jmlByRange86120],
               backgroundColor: [
-'#10006d',
-'#3c167e',
-'#5c2d8e',
-'#7945a0',
-'#955db2',
-'#b076c4',
-'#cb91d7',
-'#e5aceb',
-'#ffc8ff'
+'#665191','#665191','#665191','#665191','#665191','#665191','#665191','#665191','#665191',
+              ],
+//               borderColor: [
+// '#10006d','#3b207f','#593d91',
+// '#765ba3','#917ab5','#ad9ac8',
+// '#c8bada','#e3dcec','#ffffff'
+//               ],
+//               borderWidth: 1
+          },
+
+          {
+              label: '# Perempuan',
+              data: [jmlByRangeP03, jmlByRangeP46, jmlByRangeP79, jmlByRangeP1012, jmlByRangeP1315, jmlByRangeP1645, jmlByRangeP4659, jmlByRangeP6085, jmlByRangeP86120],
+              backgroundColor: [
+'#f95d6a','#f95d6a','#f95d6a','#f95d6a',
+'#f95d6a','#f95d6a','#f95d6a','#f95d6a','#f95d6a'
               ],
               borderColor: [
-'#10006d',
-'#3b207f',
-'#593d91',
-'#765ba3',
-'#917ab5',
-'#ad9ac8',
-'#c8bada',
-'#e3dcec',
-'#ffffff'
+'#10006d','#3b207f','#593d91',
+'#765ba3','#917ab5','#ad9ac8',
+'#c8bada','#e3dcec','#ffffff'
               ],
               borderWidth: 1
-          }]
+          }
+
+
+          ]
       },
       options: {
           scales: {

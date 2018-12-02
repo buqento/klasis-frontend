@@ -551,8 +551,6 @@ include("fun.php");
   });
 
 
-
-
   var ctx = document.getElementById("myDoughnutChart");
   var myDoughnutChart = new Chart(ctx, {
       type: 'doughnut',

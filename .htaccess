@@ -1,0 +1,26 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteOptions inherit
+#TAMBAH TANDA PAGAR RewriteBase / SAAT OFFLINE
+#RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^beranda(.*)$ index.php [L]
+RewriteRule ^jemaat(.*)$ jemaat.php [L]
+RewriteRule ^jmt/(.*)$ jmt_detail.php?j=$1 [L]
+RewriteRule ^produk/(.*)$ produk_kelembagaan.php?id=$1 [L]
+
+RewriteRule ^artikel(.*)$ artikel.php [L]
+RewriteRule ^detail/(.*)$ detail.php?id=$1 [L]
+
+ErrorDocument 404 http://www.okedeli.com/apps/notfound.html
+#ErrorDocument 404 /notfound404.php
+
+#ErrorDocument 404 "Halaman yang anda cari tidak ditemukan!"
+
+#Options All -Indexes
+</IfModule>
+
+
+

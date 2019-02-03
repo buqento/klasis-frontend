@@ -1,43 +1,47 @@
 <?php
 include("fun.php");
 
-$jmlPaud = getJmlJiwaByPendidikan(16, 1, $con);
-$jmlSd = getJmlJiwaByPendidikan(16, 2, $con);
-$jmlSmp = getJmlJiwaByPendidikan(16, 3, $con);
-$jmlSma = getJmlJiwaByPendidikan(16, 4, $con);
-$jmlS1 = getJmlJiwaByPendidikan(16, 5, $con);
-$jmlS2 = getJmlJiwaByPendidikan(16, 6, $con);
-$jmlS3 = getJmlJiwaByPendidikan(16, 7, $con);
+$jemaatId = $_GET['j'];
+$namaJemaat = getNamaJemaat($jemaatId, $con);
+$churchImage = getChurch($jemaatId, $con);
 
-$jmlByRange03 = getJmlJiwaByUmur(0, 3, 1, 16, $con); 
-$jmlByRange46 = getJmlJiwaByUmur(4, 6, 1, 16, $con); 
-$jmlByRange79 = getJmlJiwaByUmur(7, 9, 1, 16, $con); 
-$jmlByRange1012 = getJmlJiwaByUmur(10, 12, 1, 16, $con); 
-$jmlByRange1315 = getJmlJiwaByUmur(13, 15, 1, 16, $con); 
-$jmlByRange1645 = getJmlJiwaByUmur(16, 45, 1, 16, $con);
-$jmlByRange4659 = getJmlJiwaByUmur(46, 59, 1, 16, $con); 
-$jmlByRange6085 = getJmlJiwaByUmur(60, 85, 1, 16, $con); 
-$jmlByRange86120 = getJmlJiwaByUmur(86, 120, 1, 16, $con); 
+$jmlPaud = getJmlJiwaByPendidikan($jemaatId, 1, $con);
+$jmlSd = getJmlJiwaByPendidikan($jemaatId, 2, $con);
+$jmlSmp = getJmlJiwaByPendidikan($jemaatId, 3, $con);
+$jmlSma = getJmlJiwaByPendidikan($jemaatId, 4, $con);
+$jmlS1 = getJmlJiwaByPendidikan($jemaatId, 5, $con);
+$jmlS2 = getJmlJiwaByPendidikan($jemaatId, 6, $con);
+$jmlS3 = getJmlJiwaByPendidikan($jemaatId, 7, $con);
 
-
-$jmlByRangeP03 = getJmlJiwaByUmur(0, 3, 2, 16, $con); 
-$jmlByRangeP46 = getJmlJiwaByUmur(4, 6, 2, 16, $con); 
-$jmlByRangeP79 = getJmlJiwaByUmur(7, 9, 2, 16, $con); 
-$jmlByRangeP1012 = getJmlJiwaByUmur(10, 12, 2, 16, $con); 
-$jmlByRangeP1315 = getJmlJiwaByUmur(13, 15, 2, 16, $con); 
-$jmlByRangeP1645 = getJmlJiwaByUmur(16, 45, 2, 16, $con);
-$jmlByRangeP4659 = getJmlJiwaByUmur(46, 59, 2, 16, $con); 
-$jmlByRangeP6085 = getJmlJiwaByUmur(60, 85, 2, 16, $con); 
-$jmlByRangeP86120 = getJmlJiwaByUmur(86, 120, 2, 16, $con); 
+$jmlByRange03 = getJmlJiwaByUmur(0, 3, 1, $jemaatId, $con); 
+$jmlByRange46 = getJmlJiwaByUmur(4, 6, 1, $jemaatId, $con); 
+$jmlByRange79 = getJmlJiwaByUmur(7, 9, 1, $jemaatId, $con); 
+$jmlByRange1012 = getJmlJiwaByUmur(10, 12, 1, $jemaatId, $con); 
+$jmlByRange1315 = getJmlJiwaByUmur(13, 15, 1, $jemaatId, $con); 
+$jmlByRange1645 = getJmlJiwaByUmur(16, 45, 1, $jemaatId, $con);
+$jmlByRange4659 = getJmlJiwaByUmur(46, 59, 1, $jemaatId, $con); 
+$jmlByRange6085 = getJmlJiwaByUmur(60, 85, 1, $jemaatId, $con); 
+$jmlByRange86120 = getJmlJiwaByUmur(86, 120, 1, $jemaatId, $con); 
 
 
-$jmlTunaRungu = getJmlJiwaByDisabilitas(16, 2, $con);
-$jmlTunaWicara = getJmlJiwaByDisabilitas(16, 3, $con);
-$jmlTunaDaksa = getJmlJiwaByDisabilitas(16, 4, $con); 
-$jmlTunaGrahita = getJmlJiwaByDisabilitas(16, 5, $con); 
-$jmlTunaLaras = getJmlJiwaByDisabilitas(16, 6, $con);
-$jmlTunaGanda = getJmlJiwaByDisabilitas(16, 7, $con);
-$jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
+$jmlByRangeP03 = getJmlJiwaByUmur(0, 3, 2, $jemaatId, $con); 
+$jmlByRangeP46 = getJmlJiwaByUmur(4, 6, 2, $jemaatId, $con); 
+$jmlByRangeP79 = getJmlJiwaByUmur(7, 9, 2, $jemaatId, $con); 
+$jmlByRangeP1012 = getJmlJiwaByUmur(10, 12, 2, $jemaatId, $con); 
+$jmlByRangeP1315 = getJmlJiwaByUmur(13, 15, 2, $jemaatId, $con); 
+$jmlByRangeP1645 = getJmlJiwaByUmur(16, 45, 2, $jemaatId, $con);
+$jmlByRangeP4659 = getJmlJiwaByUmur(46, 59, 2, $jemaatId, $con); 
+$jmlByRangeP6085 = getJmlJiwaByUmur(60, 85, 2, $jemaatId, $con); 
+$jmlByRangeP86120 = getJmlJiwaByUmur(86, 120, 2, $jemaatId, $con); 
+
+
+$jmlTunaRungu = getJmlJiwaByDisabilitas($jemaatId, 2, $con);
+$jmlTunaWicara = getJmlJiwaByDisabilitas($jemaatId, 3, $con);
+$jmlTunaDaksa = getJmlJiwaByDisabilitas($jemaatId, 4, $con); 
+$jmlTunaGrahita = getJmlJiwaByDisabilitas($jemaatId, 5, $con); 
+$jmlTunaLaras = getJmlJiwaByDisabilitas($jemaatId, 6, $con);
+$jmlTunaGanda = getJmlJiwaByDisabilitas($jemaatId, 7, $con);
+$jmlTunaNetra = getJmlJiwaByDisabilitas($jemaatId, 8, $con);
 
 ?>
 <!DOCTYPE html>
@@ -50,21 +54,31 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../img/favicon.png" rel="icon">
+  <link href="../img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../lib/animate/animate.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <style type="text/css">
+    #hero {
+      width: 100%;
+      height: 100vh;
+      background: url(<?= $churchImage?>) top center;
+      background-size: cover;
+      position: relative;
+    }
+
+  </style>
 
 </head>
 
@@ -77,20 +91,17 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <!-- <a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a> -->
+        <a href="../beranda"><img src="../img/logo.png" alt="" title="" /></img></a>
         <!-- Uncomment below if you prefer to use a text logo -->
-        <h1><a href="#hero">Klasis</a></h1>
+        <!-- <h1><a href="#hero">Klasis</a></h1> -->
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="index.php">Home</a></li>
-          <li><a href="#about">Tentang Kami</a></li>
-          <li><a href="#">Produk</a></li>
-          <li class="menu-active"><a href="#">Jemaat</a></li>
-          <li><a href="#portfolio">Gallery</a></li>
+          <li><a href="../beranda">Home</a></li>
+          <li><a href="../jemaat">Jemaat</a></li>
           <li><a href="#">Event</a></li>
-          <li><a href="#">Artikel</a></li>
+          <li><a href="artikel">Artikel</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -101,9 +112,9 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
   ============================-->
   <section id="hero">
     <div class="hero-container">
-      <h1>Jemaat Sion</h1>
+      <h1>Jemaat <?= $namaJemaat ?></h1>
       <!-- <h2>Kamu adalah Garam dan Terang Dunia</h2> -->
-      <a href="#facts" class="btn-get-started">Data Jiwa</a>
+      <a href="#facts" class="btn-get-started">Selengkapnya</a>
     </div>
   </section><!-- #hero -->
 
@@ -118,22 +129,22 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
       <div class="container wow fadeIn">
         <div class="section-header">
           <h3 class="section-title">Jumlah Jiwa</h3>
-          <p class="section-description">Jumlah keseluruhan jiwa jemaat Sion.</p>
+          <p class="section-description">Jumlah keseluruhan jiwa jemaat <?= $namaJemaat ?>.</p>
         </div>
         <div class="row counters">
 
   				<div class="col-lg-4 col-sm-12 text-center">
-            <span data-toggle="counter-up"><?= getJmlJiwaByStatusPernikahan(16, 1, $con) ?></span>
+            <span data-toggle="counter-up"><?= getJmlJiwaByStatusPernikahan($jemaatId, 1, $con) ?></span>
             <p>Kepala Keluarga</p>
   				</div>
 
           <div class="col-lg-4 col-sm-12 text-center">
-            <span data-toggle="counter-up"><?= getJmlJiwaByJemaat(16, 1, $con) ?></span>
+            <span data-toggle="counter-up"><?= getJmlJiwaByJemaat($jemaatId, 1, $con) ?></span>
             <p>Laki-Laki</p>
   				</div>
 
           <div class="col-lg-4 col-sm-12 text-center">
-            <span data-toggle="counter-up"><?= getJmlJiwaByJemaat(16, 2, $con) ?></span>
+            <span data-toggle="counter-up"><?= getJmlJiwaByJemaat($jemaatId, 2, $con) ?></span>
             <p>Perempuan</p>
   				</div>
 
@@ -194,7 +205,7 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
 
                 <?php
                 $num = 1;
-                $sql = "select count(biodata.id) as jumlah, pendidikan.name from biodata inner join pendidikan on biodata.pendidikan_id = pendidikan.id group by biodata.pendidikan_id";
+                $sql = "select count(biodata.id) as jumlah, pendidikan.name from biodata inner join pendidikan on biodata.pendidikan_id = pendidikan.id WHERE biodata.jemaat_id=$jemaatId group by biodata.pendidikan_id";
                 $result = $con->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     $jumlah = $row['jumlah'];
@@ -250,7 +261,7 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
 
 
                 $num = 1;
-                $sql = "select count(biodata.id) as jumlah, pekerjaan.name from biodata inner join pekerjaan on biodata.pekerjaan_id = pekerjaan.id group by biodata.pekerjaan_id";
+                $sql = "select count(biodata.id) as jumlah, pekerjaan.name from biodata inner join pekerjaan on biodata.pekerjaan_id = pekerjaan.id WHERE biodata.jemaat_id=$jemaatId group by biodata.pekerjaan_id";
                 $result = $con->query($sql);
                 while ($row = $result->fetch_assoc()) {
                     $jumlah = $row['jumlah'];
@@ -427,66 +438,33 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
     <section id="team">
       <div class="container wow fadeInUp">
         <div class="section-header">
-          <h3 class="section-title">Penatua & Diaken</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <h3 class="section-title">Majelis</h3>
+          <p class="section-description">Majelis bertugas jemaat <?php echo $namaJemaat ?></p>
         </div>
+
+
         <div class="row">
+        <?php
+          $sql = "SELECT * FROM biodata_majelis ORDER BY RAND() LIMIT 4";
+          $result = $con->query($sql);
+          while ($row = $result->fetch_assoc()) {
+        ?>    
           <div class="col-lg-3 col-md-6">
             <div class="member">
-              <div class="pic"><img src="img/team-1.jpg" alt=""></div>
-              <h4>Walter White</h4>
-              <span>Penatua</span>
+              <div class="pic">
+                <img src="<?php echo $row['foto']?>" class="img-thumbnail" width="100%" alt="<?php echo $row['nama']?>">
+              </div>
+              <h4><?php echo $row['nama'] ?></h4>
+              <span><?php echo $row['jabatan'] ?></span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
                 <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team-2.jpg" alt=""></div>
-              <h4>Sarah Jhinson</h4>
-              <span>Diaken</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team-3.jpg" alt=""></div>
-              <h4>William Anderson</h4>
-              <span>Penatua</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team-4.jpg" alt=""></div>
-              <h4>John Jepson</h4>
-              <span>Penatua</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
+          <?php } ?>
         </div>
+        
 
       </div>
     </section><!-- #team -->
@@ -553,27 +531,27 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/counterup/counterup.min.js"></script>
-  <script src="lib/superfish/hoverIntent.js"></script>
-  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="../lib/jquery/jquery.min.js"></script>
+  <script src="../lib/jquery/jquery-migrate.min.js"></script>
+  <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../lib/easing/easing.min.js"></script>
+  <script src="../lib/wow/wow.min.js"></script>
+  <script src="../lib/waypoints/waypoints.min.js"></script>
+  <script src="../lib/counterup/counterup.min.js"></script>
+  <script src="../lib/superfish/hoverIntent.js"></script>
+  <script src="../lib/superfish/superfish.min.js"></script>
 
   <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
+  <script src="../contactform/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
+  <script src="../js/main.js"></script>
 
-  <script src="js/Chart.js"></script>
+  <script src="../js/Chart.js"></script>
   <script>
 
-  var jmlLakiBaptis = <?= getJmlJiwaByBaptisJenkel(16, 1, 1, $con); ?>;
-  var jmlLakiBelumBaptis = <?= getJmlJiwaByBaptisJenkel(16, 0, 1, $con); ?>;
+  var jmlLakiBaptis = <?= getJmlJiwaByBaptisJenkel($jemaatId, 1, 1, $con); ?>;
+  var jmlLakiBelumBaptis = <?= getJmlJiwaByBaptisJenkel($jemaatId, 0, 1, $con); ?>;
 
   var ctx = document.getElementById("chartBaptisLaki");
   var chartBaptisLaki = new Chart(ctx, {
@@ -599,8 +577,8 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
       // }
   });
 
-  var jmlPerempuanBaptis = <?= getJmlJiwaByBaptisJenkel(16, 1, 2, $con); ?>;
-  var jmlPerempuanBelumBaptis = <?= getJmlJiwaByBaptisJenkel(16, 0, 2, $con); ?>;
+  var jmlPerempuanBaptis = <?= getJmlJiwaByBaptisJenkel($jemaatId, 1, 2, $con); ?>;
+  var jmlPerempuanBelumBaptis = <?= getJmlJiwaByBaptisJenkel($jemaatId, 0, 2, $con); ?>;
 
   var ctx = document.getElementById("myPieChart");
   var myPieChart = new Chart(ctx, {
@@ -641,25 +619,25 @@ $jmlTunaNetra = getJmlJiwaByDisabilitas(16, 8, $con);
   });
   
 
-  var jmlPekerjaanLainnya = <?= getJmlJiwaByPekerjaan(16, 1, $con); ?>;
-  var jmlPekerjaanPns = <?= getJmlJiwaByPekerjaan(16, 2, $con); ?>;
-  var jmlPekerjaanHonor = <?= getJmlJiwaByPekerjaan(16, 3, $con); ?>;
-  var jmlPekerjaanGuru = <?= getJmlJiwaByPekerjaan(16, 4, $con); ?>;
-  var jmlPekerjaanTniPolri = <?= getJmlJiwaByPekerjaan(16, 5, $con); ?>;
-  var jmlPekerjaanWiraswasta = <?= getJmlJiwaByPekerjaan(16, 6, $con); ?>;
-  var jmlPekerjaanBumn = <?= getJmlJiwaByPekerjaan(16, 7, $con); ?>;
-  var jmlPekerjaanDosen = <?= getJmlJiwaByPekerjaan(16, 8, $con); ?>;
-  var jmlPekerjaanPengacara = <?= getJmlJiwaByPekerjaan(16, 9, $con); ?>;
-  var jmlPekerjaanDokter = <?= getJmlJiwaByPekerjaan(16, 10, $con); ?>;
-  var jmlPekerjaanPerawat = <?= getJmlJiwaByPekerjaan(16, 11, $con); ?>;
-  var jmlPekerjaanPendeta = <?= getJmlJiwaByPekerjaan(16, 12, $con); ?>;
-  var jmlPekerjaanNotaris = <?= getJmlJiwaByPekerjaan(16, 13, $con); ?>;
-  var jmlPekerjaanArsitek = <?= getJmlJiwaByPekerjaan(16, 14, $con); ?>;
-  var jmlPekerjaanOjek = <?= getJmlJiwaByPekerjaan(16, 15, $con); ?>;
-  var jmlPekerjaanSopir = <?= getJmlJiwaByPekerjaan(16, 16, $con); ?>;
-  var jmlPekerjaanBecak = <?= getJmlJiwaByPekerjaan(16, 17, $con); ?>;
-  var jmlPekerjaanPensiunan = <?= getJmlJiwaByPekerjaan(16, 18, $con); ?>;
-  var jmlPekerjaanNelayan = <?= getJmlJiwaByPekerjaan(16, 19, $con); ?>;
+  var jmlPekerjaanLainnya = <?= getJmlJiwaByPekerjaan($jemaatId, 1, $con); ?>;
+  var jmlPekerjaanPns = <?= getJmlJiwaByPekerjaan($jemaatId, 2, $con); ?>;
+  var jmlPekerjaanHonor = <?= getJmlJiwaByPekerjaan($jemaatId, 3, $con); ?>;
+  var jmlPekerjaanGuru = <?= getJmlJiwaByPekerjaan($jemaatId, 4, $con); ?>;
+  var jmlPekerjaanTniPolri = <?= getJmlJiwaByPekerjaan($jemaatId, 5, $con); ?>;
+  var jmlPekerjaanWiraswasta = <?= getJmlJiwaByPekerjaan($jemaatId, 6, $con); ?>;
+  var jmlPekerjaanBumn = <?= getJmlJiwaByPekerjaan($jemaatId, 7, $con); ?>;
+  var jmlPekerjaanDosen = <?= getJmlJiwaByPekerjaan($jemaatId, 8, $con); ?>;
+  var jmlPekerjaanPengacara = <?= getJmlJiwaByPekerjaan($jemaatId, 9, $con); ?>;
+  var jmlPekerjaanDokter = <?= getJmlJiwaByPekerjaan($jemaatId, 10, $con); ?>;
+  var jmlPekerjaanPerawat = <?= getJmlJiwaByPekerjaan($jemaatId, 11, $con); ?>;
+  var jmlPekerjaanPendeta = <?= getJmlJiwaByPekerjaan($jemaatId, 12, $con); ?>;
+  var jmlPekerjaanNotaris = <?= getJmlJiwaByPekerjaan($jemaatId, 13, $con); ?>;
+  var jmlPekerjaanArsitek = <?= getJmlJiwaByPekerjaan($jemaatId, 14, $con); ?>;
+  var jmlPekerjaanOjek = <?= getJmlJiwaByPekerjaan($jemaatId, 15, $con); ?>;
+  var jmlPekerjaanSopir = <?= getJmlJiwaByPekerjaan($jemaatId, 16, $con); ?>;
+  var jmlPekerjaanBecak = <?= getJmlJiwaByPekerjaan($jemaatId, 17, $con); ?>;
+  var jmlPekerjaanPensiunan = <?= getJmlJiwaByPekerjaan($jemaatId, 18, $con); ?>;
+  var jmlPekerjaanNelayan = <?= getJmlJiwaByPekerjaan($jemaatId, 19, $con); ?>;
 
   var ctx = document.getElementById("chartPekerjaan");
   var chartPekerjaan = new Chart(ctx, {

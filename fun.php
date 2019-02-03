@@ -1,8 +1,29 @@
 <?php
 
-// $con = mysqli_connect("localhost","root","Manggureb3!","klasisambon");
-$con = mysqli_connect("localhost","timoerin_bvqento","Manggureb3!","timoerin_klasis");
+$con = mysqli_connect("localhost","root","","klasisambon");
+// $con = mysqli_connect("localhost","klasisko_bvqento","Manggureb3!","klasisko_dev");
 if (mysqli_connect_errno()){echo "Failed to connect to MySQL: " . mysqli_connect_error();}
+
+function getProdukKelembagaan($id, $con){
+  $query = "SELECT name FROM kategori_produk WHERE id=".$id;
+  $result = $con->query($query);
+  $row = $result->fetch_assoc();
+  return $row['name'];
+}
+
+function getNamaJemaat($jemaatId, $con){
+	$sql = "SELECT nama_jemaat FROM jemaat WHERE id=".$jemaatId;
+	$result = $con->query($sql);
+	$row = $result->fetch_assoc();
+	return $row['nama_jemaat'];
+}
+
+function getChurch($jemaatId, $con){
+	$sql = "SELECT gambar FROM jemaat WHERE id=".$jemaatId;
+	$result = $con->query($sql);
+	$row = $result->fetch_assoc();
+	return $row['gambar'];
+}
 
 function getJmlJemaat($con){
 	$sql = "SELECT COUNT(id) AS jumlah FROM jemaat";

@@ -45,20 +45,19 @@ include("fun.php");
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <!-- <a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a> -->
+        <a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a>
         <!-- Uncomment below if you prefer to use a text logo -->
-        <h1><a href="#hero">Klasis</a></h1>
+        <!-- <h1><a href="#hero"></a></h1> -->
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="menu-active"><a href="#hero">Home</a></li>
-          <li><a href="#about">Tentang Kami</a></li>
-          <li><a href="#">Produk</a></li>
-          <li><a href="jemaat_detail.php">Jemaat</a></li>
+          <li><a href="#services">Produk</a></li>
+          <li><a href="jemaat">Jemaat</a></li>
           <li><a href="#portfolio">Gallery</a></li>
           <li><a href="#">Event</a></li>
-          <li><a href="#">Artikel</a></li>
+          <li><a href="artikel">Artikel</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -167,35 +166,35 @@ include("fun.php");
       <div class="container wow fadeIn">
         <div class="section-header">
           <h3 class="section-title">Produk Kelembagaan</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <p class="section-description">Deskripsi produk kelembagaan</p>
         </div>
         <div class="row">
           <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
             <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-bar-chart"></i></a></div>
-              <h4 class="title"><a href="">Rencana Strategi</a></h4>
+              <div class="icon"><a href="produk/1"><i class="fa fa-bar-chart"></i></a></div>
+              <h4 class="title"><a href="produk/1">Rencana Strategi</a></h4>
               <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
             </div>
           </div>
           <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
             <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-balance-scale"></i></a></div>
-              <h4 class="title"><a href="">Persidangan</a></h4>
+              <div class="icon"><a href="produk/2"><i class="fa fa-balance-scale"></i></a></div>
+              <h4 class="title"><a href="produk/2">Persidangan</a></h4>
               <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
             </div>
           </div>
           <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
             <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-file"></i></a></div>
-              <h4 class="title"><a href="">Surat Keputusan</a></h4>
+              <div class="icon"><a href="produk/3"><i class="fa fa-file"></i></a></div>
+              <h4 class="title"><a href="produk/3">Surat Keputusan</a></h4>
               <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
             </div>
           </div>
 
           <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
             <div class="box">
-              <div class="icon"><a href=""><i class="fa fa-book"></i></a></div>
-              <h4 class="title"><a href="">Himpunan Materi</a></h4>
+              <div class="icon"><a href="produk/4"><i class="fa fa-book"></i></a></div>
+              <h4 class="title"><a href="produk/4">Himpunan Materi</a></h4>
               <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
             </div>
           </div>
@@ -212,7 +211,7 @@ include("fun.php");
         <div class="row">
           <div class="col-lg-9 text-center text-lg-left">
             <h3 class="cta-title">Layanan Doa</h3>
-            <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="cta-text">Layanan ini aktif 24 jam, dan kami akan setanggap mungkin merespon Permohonan Doa Saudara. Layanan ini untuk menolong Saudara yang sangat membutuhkan bantuan/dukungan doa dalam segala permasalahan hidup.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
             <a class="cta-btn align-middle" href="#">Layanan Doa</a>
@@ -370,75 +369,7 @@ include("fun.php");
       </div>
     </section><!-- #portfolio -->
 
-    <!--==========================
-      Team Section
-    ============================-->
-    <section id="team">
-      <div class="container wow fadeInUp">
-        <div class="section-header">
-          <h3 class="section-title">Majelis</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team-1.jpg" alt=""></div>
-              <h4>Walter White</h4>
-              <span>Penatua</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team-2.jpg" alt=""></div>
-              <h4>Sarah Jhinson</h4>
-              <span>Diaken</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team-3.jpg" alt=""></div>
-              <h4>William Anderson</h4>
-              <span>Penatua</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team-4.jpg" alt=""></div>
-              <h4>John Jepson</h4>
-              <span>Penatua</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- #team -->
 
     <!--==========================
       Contact Section
